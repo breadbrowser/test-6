@@ -148,7 +148,8 @@ def convert_rmkv_checkpoint_to_hf_format(
     if push_to_hub:
         if model_name is None:
             raise ValueError("Please provide a `model_name` to push the model to the Hub.")
-        model = AutoModelForCausalLM.from_pretrained(output_dir)
+        model = AutoModelForCausalLM.from_pretrained(output_dir, ignore_mismatched_sizes=True)
+        model.resize_token_embeddings(len(tokenizer))
         model.push_to_hub(model_name, max_shard_size="2GB")
         tokenizer.push_to_hub(model_name)
 
