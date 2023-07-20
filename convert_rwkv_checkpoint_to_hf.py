@@ -29,7 +29,7 @@ from transformers.modeling_utils import WEIGHTS_INDEX_NAME, shard_checkpoint
 
 
 NUM_HIDDEN_LAYERS_MAPPING = {
-    "169M": 94,
+    "1B4": 94,
     "430M": 24,
     "1B5": 24,
     "3B": 32,
@@ -38,7 +38,7 @@ NUM_HIDDEN_LAYERS_MAPPING = {
 }
 
 HIDEN_SIZE_MAPPING = {
-    "169M": 1024,
+    "1B4": 1024,
     "430M": 1024,
     "1B5": 2048,
     "3B": 2560,
